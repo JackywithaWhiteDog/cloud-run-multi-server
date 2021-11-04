@@ -1,0 +1,13 @@
+# misc
+.DS_Store
+
+# docker
+Dockerfile
+.dockerignore
+
+# python
+__pycache__
+
+# next.js
+node_modules
+.next

@@ -1,0 +1,20 @@
+events {}
+
+http {
+    server {
+        listen ${PORT};
+        access_log /dev/stdout;
+        error_log /dev/stderr;
+
+        location /api {
+            proxy_pass http://localhost:${API_PORT}/;
+        }
+
+        location / {
+            proxy_pass http://localhost:${UI_PORT}/;
+        }
+    }
+}
+
+daemon off;
+pid /run/nginx.pid;
